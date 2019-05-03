@@ -1,0 +1,115 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{% static 'css/art.css' %}">
+
+        <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: black;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+        .container {
+          padding: 16px;
+          background-color: white;
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+        hr {
+          border: 1px solid #f1f1f1;
+          margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+        .registerbtn {
+          background-color: #C25100;
+          color: white;
+          padding: 16px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          opacity: 0.8;
+        }
+
+        .registerbtn:hover {
+          opacity: 1;
+        }
+
+        /* Add a blue text color to links */
+        a {
+          color: dodgerblue;
+        }
+
+        /* Set a grey background color and center the text of the "sign in" section */
+        .signin {
+          background-color: #f1f1f1;
+          text-align: center;
+        }
+
+
+        </style>
+
+
+
+    </head>
+    <body>
+
+<div class="page-header">
+
+    <h1><a href="/">Register</a></h1>
+
+</div>
+<html>
+<head>
+    <title>Register</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <div>
+      <form class="container" method="POST" action='' enctype='multipart/form-data' class="post-form">{% csrf_token %}
+
+        Username:<input type="text" name="username" id="username"
+                                           value="{{ user_form.username.value|default_if_none:"" }}" <a placeholder="Username"></a>
+        Password:<input type="text" name="password" id="password" value="{{ user_form.password.value|default_if_none:"" }}" placeholder="password">
+        Email:<input type="text" name="email" id="email" value="{{ user_form.email.value|default_if_none:"" }}" placeholder="email">
+
+        <button  class="registerbtn" type="submit" class="save btn btn-default">Save</button>
+        </form>
+
+
+    </div>
+    </body>
+    </html>

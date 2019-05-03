@@ -1,0 +1,50 @@
+{% load static %}
+<div class="page-header">
+
+    <h1><a href="{% url 'hashtag_list' %}">Voice Box</a></h1>
+</div>
+
+    <html>
+        <head>
+            <title>Voice Box</title>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+            <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+            <link rel="stylesheet" href="{% static 'css/first.css' %}">
+        </head>
+        <body>
+
+<div class="topnav">
+
+      <!--<h5>  Hello {{ User.username }},</h5>-->
+      <a href="{% url 'hashtag_list' %}">HOME</a>
+
+      <a href="{% url 'post_new' %}">CREATE NEW POST</a>
+      <a href="{% url 'my_post' %}">MY POSTS</a>
+      <a href="{% url 'hashtag_art' %}">ART</a>
+      <a href="{% url 'hashtag_tech' %}">TECHNOLOGY</a>
+      <a href="{% url 'hashtag_wildlife' %}">WILDLIFE</a>
+      <a href="{% url 'hashtag_mood' %}">MOOD</a>
+      <a href="{% url 'hashtag_fashion' %}">FASHION</a>
+      <a href="{% url 'hashtag_food' %}">FOOD</a>
+
+
+
+      <div class="text-align: right"><a href="{% url 'home' %}">LOGOUT</a></div>
+    </div>
+
+    <br>
+    <br>
+
+    <div style="text-align: center"> <a href="art"> <img src="/media/images/A.png" width="300px" height="300px"  /></a></div><br>
+    <div style="text-align: center"><a href="tech"> <img src="/media/images/Isabel_Mercados_exhibit_May_23_-_25___Beechtown_Gallery_1.png" width="300px" height="300px" padding="20px" /></a></div><br>
+    <div style="text-align: center"><a href="wildlife"> <img src="/media/images/Isabel_Mercados_exhibit_May_23_-_25___Beechtown_Gallery_3.png" width="300 px" height="300px" padding="20px" /></a></div><br>
+    <div style="text-align: center"><a href="mood"> <img src="/media/images/HGH.png" width="300 px" height="300px" padding="20px" /></a></div><br>
+    <div style="text-align: center"><a href="fashion"> <img src="/media/images/HGH2.png" width="300 px" height="300px" padding="20px" /></a></div><br>
+    <div style="text-align: center"><a href="food"> <img src="/media/images/Isabel_Mercados_exhibit_May_23_-_25___Beechtown_Gallery_2.png" width="300 px" height="300px" padding="20px" /></a></div><br>
+
+
+                  <br>
+        </body>
+    </html>

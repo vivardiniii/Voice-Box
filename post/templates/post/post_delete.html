@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+    <head>
+        <title>Delete Post</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{% static 'css/art.css' %}">
+    </head>
+    <body>
+
+<div class="page-header">
+  <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus-sign"></span</a>
+
+    <h1><a href="/">Delete Post</a></h1>
+</div>
+<div class="topnav">
+
+      <!--<h5>  Hello {{ User.username }},</h5>-->
+      <a href="{% url 'hashtag_list' %}">HOME</a>
+
+      <a href="{% url 'post_new' %}">CREATE NEW POST</a>
+      <a href="{% url 'my_post' %}">MY POSTS</a>
+      <a href="{% url 'hashtag_art' %}">ART</a>
+      <a href="{% url 'hashtag_tech' %}">TECHNOLOGY</a>
+      <a href="{% url 'hashtag_wildlife' %}">WILDLIFE</a>
+      <a href="{% url 'hashtag_mood' %}">MOOD</a>
+      <a href="{% url 'hashtag_fashion' %}">FASHION</a>
+      <a href="{% url 'hashtag_food' %}">FOOD</a>
+
+
+      <div class="text-align: right"><a href="{% url 'home' %}">LOGOUT</a></div>
+    </div>
+
+    <form method="post">{% csrf_token %}
+      <br>
+        <h3>Are you sure you want to delete "{{ postu_form.as_p }}" ?</h3>
+        <input class="btn btn-default" type="submit" value="Yes" />
+<h3><a href="{% url 'hashtag_list' %}">Cancel and return</a></h3>
+
+    </form>

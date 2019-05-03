@@ -1,0 +1,55 @@
+{% load static %}
+<html>
+    <head>
+        <title>#Wildlife</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{% static 'css/art.css' %}">
+    </head>
+    <body>
+
+<div class="page-header">
+  <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus-sign"></span</a>
+
+    <h1><a href="/">#Wildlife</a></h1>
+</div>
+<div class="topnav">
+
+      <!--<h5>  Hello {{ User.username }},</h5>-->
+      <a href="{% url 'hashtag_list' %}">HOME</a>
+
+      <a href="{% url 'post_new' %}">CREATE NEW POST</a>
+      <a href="{% url 'my_post' %}">MY POSTS</a>
+      <a href="{% url 'hashtag_art' %}">ART</a>
+      <a href="{% url 'hashtag_tech' %}">TECHNOLOGY</a>
+      <a href="{% url 'hashtag_wildlife' %}">WILDLIFE</a>
+      <a href="{% url 'hashtag_mood' %}">MOOD</a>
+      <a href="{% url 'hashtag_fashion' %}">FASHION</a>
+      <a href="{% url 'hashtag_food' %}">FOOD</a>
+
+
+      <div class="text-align: right"><a href="{% url 'home' %}">LOGOUT</a></div>
+    </div>
+          {% for post in posts %}
+              <div class="container">
+
+                <div class="content" >
+                  <h2><a>{{ post.title }}</a></h2>
+                <h6>  Written by: {{ post.user }} </<h6>
+                  <p>Hashtags: {{ post.hname|linebreaksbr }}</p>
+                  <img src="{{ post.image.url }}" width="500px"/>
+                  <p>{{ post.text|linebreaksbr }}</p>
+                  <br>
+                  <p>{{ post.date|linebreaksbr }}</p>
+
+
+                    </div>
+                    <br>
+              </div>
+              <br>
+
+          {% endfor %}
+    </body>
+</html>
