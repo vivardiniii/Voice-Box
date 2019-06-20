@@ -5,7 +5,6 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 from django.views.generic.base import TemplateView
 
-
 urlpatterns = [
     path('', views.home, name="home"),
     #path(r'^login/$', auth_views.login, {'template_name': 'post/login_user.html'}),

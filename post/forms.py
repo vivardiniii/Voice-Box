@@ -9,7 +9,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         #model = apps.get_model('hashtag', 'Hashtag')
-        fields = ('user', 'title', 'text', 'date', 'image','hname')
+        fields = ('user','title', 'text', 'date', 'image','hname')
 
 class HashtagForm(forms.ModelForm):
 
